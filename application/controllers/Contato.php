@@ -11,12 +11,12 @@ class Contato extends CI_Controller {
     }
 
     public function index() {
-//        $this->load->view('template/header');
+        $this->load->view('template/header');
         $dados['acronico'] = "PF";
         $dados['completo'] = "Projeto Frame";
         $dados['contatos'] = $this->contatos->listar();
         $this->load->view('contato', $dados);
-//        ,$this->load->view('template/footer');
+        $this->load->view('template/footer');
     }
 
     public function inserir() {
@@ -32,10 +32,12 @@ class Contato extends CI_Controller {
     }
 
     public function editar($id) {
-    $data['acronico'] = "MPF";    
-    $data['completo'] = "Meu Projeto Frame";    
-    $data['contatoEditar'] = $this->contatos->editar($id);
-    $this->load->view('contatoEditar', $data);    
+        $this->load->view('template/header');
+        $data['acronico'] = "MPF";
+        $data['completo'] = "Meu Projeto Frame";
+        $data['contatoEditar'] = $this->contatos->editar($id);
+        $this->load->view('contatoEditar', $data);
+        $this->load->view('template/footer');
     }
 
     public function atualizar() {
@@ -45,6 +47,7 @@ class Contato extends CI_Controller {
         $this->contatos->atualizar($data);
         redirect('contato');
     }
+
 }
 
 /* 
