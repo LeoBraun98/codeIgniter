@@ -13,7 +13,10 @@ and open the template in the editor.
         
         <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/bootstrap-grid.min.css');?>" rel="stylesheet">
-                
+         
+        <!--datatable-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+        
     </head>
     <body>
         
