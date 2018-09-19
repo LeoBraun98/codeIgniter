@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 
 <div class="container">
-    
+
     <?php
     // put your code here
     echo $acronico;
@@ -26,6 +26,17 @@ and open the template in the editor.
         <input class="form-control" id="name" name="email" type="email" required/>
     </div>
 
+    <div class="form-group">
+        <label for="idfuncao">Função:</label>
+        <select class="form-control" aria-label="ngSelected demo" required="requered" id="idfuncao" name="idfuncao" type="name" required/>
+        <option>Selecionar Função... </option>
+        <?php foreach ($funcao as $funcao): ?>
+            <option value="<?php echo $funcao->idfuncao; ?>"><?php echo $funcao->nomefuncao; ?></option>
+        <?php endforeach; ?>        
+  
+    </div>
+    
+
 
     <input class="btn btn-success" type="submit" value="Salvar"/>
     <input class="btn btn-secondary" type="reset" value="Limpar"/>
@@ -40,6 +51,7 @@ and open the template in the editor.
 
                         <th scope="col">Nome</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Funções</th>
                         <th scope="col">Função</th>
                     </tr>
                 </thead>
@@ -51,6 +63,7 @@ and open the template in the editor.
                             <tr>
                                 <td><?php echo $row->nome; ?></td>
                                 <td><?php echo $row->email; ?></td>
+                                <td><?php echo $row->idfuncao; ?></td>
                                 <td>
                                     <a class="btn btn-success"href="<?php
                                     echo base_url() .

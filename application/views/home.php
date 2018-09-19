@@ -20,6 +20,9 @@ and open the template in the editor.
             <p></p>
             <a class="btn btn-success" href="<?php echo base_url() . 'contato'; ?>">Adicionar Contato</a>
             
+            <p></p>
+            <a class="btn btn-success" href="<?php echo base_url() . 'funcao'; ?>">Adicionar Função</a>
+            
         </div>
         <div class="col-sm">
             

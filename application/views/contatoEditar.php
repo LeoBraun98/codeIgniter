@@ -26,10 +26,19 @@
         <input class="form-control" id="email" name="email" name="email" type="email" value="<?php echo $contatoEditar[0]->email; ?>" required/>
         </div>
         
+        <div class="form-group">
+        <label for="idfuncao">Função:</label>
+        <select class="form-control" aria-label="ngSelected demo" required="requered" id="idfuncao" name="idfuncao" type="name" required/>
+        <option>Selecionar Função... </option>
+        <?php foreach ($funcao as $funcao): ?>
+            <option value="<?php echo $funcao->idfuncao; ?>"><?php echo $funcao->nomefuncao; ?></option>
+        <?php endforeach; ?>  
+        
         <input class="btn btn-success"  type="submit" value="Salvar"/>
         <?php form_close(); ?>
         <p></p>
         <a class="btn btn-primary" href="<?php echo base_url() . 'contato'; ?>">Cancelar</a>
+        
     </div>
     <div class="col-sm">
     </div>
