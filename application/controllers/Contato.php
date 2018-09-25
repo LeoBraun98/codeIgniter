@@ -22,8 +22,8 @@ class Contato extends CI_Controller {
     }
 
     public function inserir() {
-        $dados['nome'] = $this->input->post('nome');
-        $dados['email'] = $this->input->post('email');
+        $dados['nome'] = mb_convert_case ($this->input->post('nome'), MB_CASE_UPPER);
+        $dados['email'] = mb_convert_case( $this->input->post('email'), MB_CASE_LOWER);
         $dados['idfuncao'] = $this->input->post('idfuncao');
         $this->contatos->inserir($dados);
         redirect('contato');
@@ -46,8 +46,9 @@ class Contato extends CI_Controller {
 
     public function atualizar() {
         $data['id'] = $this->input->post('id');
-        $data['nome'] = $this->input->post('nome');
-        $data['email'] = $this->input->post('email');
+        $data['nome'] = mb_convert_case( $this->input->post('nome'), MB_CASE_UPPER);
+        $data['email'] = mb_convert_case( $this->input->post('email'), MB_CASE_LOWER);
+        $data['idfuncao'] = $this->input->post('idfuncao');
         $this->contatos->atualizar($data);
         redirect('contato');
     }

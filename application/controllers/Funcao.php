@@ -20,7 +20,7 @@ class Funcao extends CI_Controller {
     }
 
     public function inserir() {
-        $dados['nomefuncao'] = $this->input->post('nomefuncao');
+        $dados['nomefuncao'] = mb_convert_case( $this->input->post('nomefuncao'), MB_CASE_UPPER);
         $this->funcao->inserir($dados);
         redirect('funcao');
     }
@@ -41,7 +41,7 @@ class Funcao extends CI_Controller {
 
     public function atualizar() {
         $data['idfuncao'] = $this->input->post('idfuncao');
-        $data['nomefuncao'] = $this->input->post('nomefuncao');
+        $data['nomefuncao'] = mb_convert_case( $this->input->post('nomefuncao'), MB_CASE_UPPER);
         $this->funcao->atualizar($data);
         redirect('funcao');
     }

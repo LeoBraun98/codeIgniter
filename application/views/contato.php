@@ -28,12 +28,13 @@ and open the template in the editor.
 
     <div class="form-group">
         <label for="idfuncao">Função:</label>
-        <select class="form-control" aria-label="ngSelected demo" required="requered" id="idfuncao" name="idfuncao" type="name" required/>
+        <select class="form-control" aria-label="ngSelected demo" required="requered"
+                id="idfuncao" name="idfuncao" type="name" required/>
         <option>Selecionar Função... </option>
         <?php foreach ($funcao as $funcao): ?>
             <option value="<?php echo $funcao->idfuncao; ?>"><?php echo $funcao->nomefuncao; ?></option>
         <?php endforeach; ?>        
-  
+    </select>
     </div>
     
 
@@ -63,7 +64,7 @@ and open the template in the editor.
                             <tr>
                                 <td><?php echo $row->nome; ?></td>
                                 <td><?php echo $row->email; ?></td>
-                                <td><?php echo $row->idfuncao; ?></td>
+                                <td><?php echo $row->nomefuncao; ?></td>
                                 <td>
                                     <a class="btn btn-success"href="<?php
                                     echo base_url() .
