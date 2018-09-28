@@ -6,6 +6,10 @@ and open the template in the editor.
 -->
 
 <div class="container">
+    <div class="row"
+    <!--Responsivo para smartphone, tablet e PC-->
+    <div class="col-xs-1 col-sm-1 col-lg-3"></div>
+    <div class="col-xs-10 col-sm-10 col-lg-6">
 
     <?php
     // put your code here
@@ -84,4 +88,6 @@ and open the template in the editor.
     </div>
 
     <a class="btn btn-primary" href="<?php echo base_url() . 'home'; ?>">Voltar</a>  
+</div>
+         <div class="col-xs-1 col-sm-1 col-lg-3"></div>
 </div>
