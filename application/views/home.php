@@ -23,7 +23,8 @@ and open the template in the editor.
             <a class="btn btn-success" href="<?php echo base_url() . 'funcao'; ?>">Adicionar Função</a>
             <p></p>
             <a class="btn btn-success" href="<?php echo base_url() . 'usuario'; ?>">Adicionar Usuario</a>
-            
+            <p></p>
+            <a class="btn btn-primary" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
             
         </div>
         <div class="col-sm">

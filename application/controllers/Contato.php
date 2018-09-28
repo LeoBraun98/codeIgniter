@@ -2,10 +2,15 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contato extends CI_Controller {
-
-    function __construct() {
+class Contato extends CI_Controller {    
+      function __construct() {      
+         
         parent::__construct();
+        
+        if(!$this->session->userdata('estou_logado')){
+            redirect('Login');
+            } 
+        
         $this->load->model('Contatos_model', 'contatos');
         $this->load->model('Funcao_model', 'funcao');
         //contatos Ã© um alias para o Contatos_model 

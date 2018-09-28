@@ -5,7 +5,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Usuario extends CI_Controller {
 
     function __construct() {
+        
         parent::__construct();
+        
+        if(!$this->session->userdata('estou_logado')){
+            redirect('Login');
+            } elseif ($this->session->userdata('logado')->perfilacesso!="ADM") {
+            redirect('home');
+        } 
+        
         $this->load->model('Usuario_model', 'usuario');
         //contatos Ã© um alias para o Contatos_model 
     }
