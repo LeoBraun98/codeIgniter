@@ -33,7 +33,7 @@ class Contato extends CI_Controller {
         $result = $this->contatos->inserir($dados);
          if ($result == true){
             $this->session->set_flashdata('sucesso','msg');
-            redirect('usuario');
+            redirect('contato');
         } else {
             $this->session->set_flashdata('falha','msg');
             redirect('contato');

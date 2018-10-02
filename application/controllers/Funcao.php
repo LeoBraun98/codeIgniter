@@ -31,7 +31,7 @@ class Funcao extends CI_Controller {
         $result = $this->funcao->inserir($dados);
          if ($result == true){
             $this->session->set_flashdata('sucesso','msg');
-            redirect('usuario');
+            redirect('funcao');
         } else {
             $this->session->set_flashdata('falha','msg');
             redirect('funcao');
