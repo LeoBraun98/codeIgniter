@@ -28,8 +28,15 @@ class Funcao extends CI_Controller {
 
     public function inserir() {
         $dados['nomefuncao'] = mb_convert_case( $this->input->post('nomefuncao'), MB_CASE_UPPER);
-        $this->funcao->inserir($dados);
-        redirect('funcao');
+        $result = $this->funcao->inserir($dados);
+         if ($result == true){
+            $this->session->set_flashdata('sucesso','msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('falha','msg');
+            redirect('funcao');
+        }
+      
     }
 
     public function excluir($id) {
