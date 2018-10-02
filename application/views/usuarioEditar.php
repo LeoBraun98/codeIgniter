@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input class="form-control"  id="senha" name="senha" type="password" required/>
+                <input class="form-control"  id="senha" name="senha" requered placeholder="Minimo 8 caracteres" minlength="8" type="password" required/>
             </div>
 
 
