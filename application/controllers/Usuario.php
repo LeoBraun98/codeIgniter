@@ -43,8 +43,15 @@ class Usuario extends CI_Controller {
     }
 
     public function excluir($id) {
-        $this->usuario->deletar($id);
-        redirect('usuario');
+        $result = $this->usuario->deletar($id);
+        if ($result == true){
+            $this->session->set_flashdata('excluirS','msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('excluirF','msg');
+            redirect('usuario');
+        }
+      
     }
 
     
@@ -63,8 +70,15 @@ class Usuario extends CI_Controller {
         $data['user'] = mb_convert_case( $this->input->post('user'), MB_CASE_UPPER);
         $data['perfilacesso'] = $this->input->post('perfilacesso');
         $data['senha'] = md5( $this->input->post('senha'));
-        $this->usuario->atualizar($data);
-        redirect('usuario');
+        $result = $this->usuario->atualizar($data);
+        if ($result == true){
+            $this->session->set_flashdata('sucessoA','msg');
+            redirect('usuario');
+        } else {
+            $this->session->set_flashdata('falhaA','msg');
+            redirect('usuario');
+        }
+       
     }
 
 }

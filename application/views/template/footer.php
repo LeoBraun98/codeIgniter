@@ -14,7 +14,18 @@ and open the template in the editor.
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.0/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/r-2.2.2/datatables.min.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.js"></script>
+ 
 
+<!--<div class="row">
+            <div class="col-xs-8 col-sm-8 col-lg-8"></div>
+            <div class="col-xs-2 col-sm-2 col-lg-2">
+                <?php if ($this->session->userdata('estou_logado')) { ?>
+                    <a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                <?php } ?>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-lg-2"></div>
+        </div>-->
+        
 <!--Msg Sistema-->
 
 <?php if ($this->session->flashdata('sucesso')) { ?>

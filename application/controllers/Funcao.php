@@ -40,9 +40,16 @@ class Funcao extends CI_Controller {
     }
 
     public function excluir($id) {
-        $this->funcao->deletar($id);
-        redirect('funcao');
-    }
+        $result = $this->funcao->deletar($id);
+         if ($result == true){
+            $this->session->set_flashdata('excluirS','msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('excluirF','msg');
+            redirect('funcao');
+        }
+       
+     }
 
     public function editar($id) {
         $this->load->view('template/header');
@@ -56,8 +63,15 @@ class Funcao extends CI_Controller {
     public function atualizar() {
         $data['idfuncao'] = $this->input->post('idfuncao');
         $data['nomefuncao'] = mb_convert_case( $this->input->post('nomefuncao'), MB_CASE_UPPER);
-        $this->funcao->atualizar($data);
-        redirect('funcao');
+        $result = $this->funcao->atualizar($data);
+         if ($result == true){
+            $this->session->set_flashdata('sucessoA','msg');
+            redirect('funcao');
+        } else {
+            $this->session->set_flashdata('falhaA','msg');
+            redirect('funcao');
+        }
+        
     }
 
 }

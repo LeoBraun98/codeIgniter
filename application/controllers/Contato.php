@@ -42,8 +42,15 @@ class Contato extends CI_Controller {
     }
 
     public function excluir($id) {
-        $this->contatos->deletar($id);
-        redirect('contato');
+        $result = $this->contatos->deletar($id);
+          if ($result == true){
+            $this->session->set_flashdata('excluirS','msg');
+            redirect('contato');
+        } else {
+            $this->session->set_flashdata('excluirF','msg');
+            redirect('contato');
+        }
+        
     }
 
     public function editar($id) {
@@ -61,8 +68,15 @@ class Contato extends CI_Controller {
         $data['nome'] = mb_convert_case( $this->input->post('nome'), MB_CASE_UPPER);
         $data['email'] = mb_convert_case( $this->input->post('email'), MB_CASE_LOWER);
         $data['idfuncao'] = $this->input->post('idfuncao');
-        $this->contatos->atualizar($data);
-        redirect('contato');
+        $result = $this->contatos->atualizar($data);
+          if ($result == true){
+            $this->session->set_flashdata('sucessoA','msg');
+            redirect('contato');
+        } else {
+            $this->session->set_flashdata('falhaA','msg');
+            redirect('contato');
+        }
+        
     }
 
 }
