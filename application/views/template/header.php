@@ -44,26 +44,32 @@ and open the template in the editor.
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Atalhos
+                            ATALHOS
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo base_url() . 'funcao'; ?>">Função</a>
                             <a class="dropdown-item" href="<?php echo base_url() . 'usuario'; ?>">Usuario</a>
                             <a class="dropdown-item" href="<?php echo base_url() . 'contato'; ?>">Contato</a>
+                            
                         </div>
                     </li>
                 </ul>
             </div>
+            
+            <?php 
+            if ($this->session->userdata('estou_logado')) { 
+            echo $this->session->userdata('logado')->nomeusuario;?>
+            &nbsp; <a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
+                <?php } ?>                   
+                  
         </nav>
 
 
         <div class="row">
             <div class="col-xs-8 col-sm-8 col-lg-8"></div>
             <div class="col-xs-2 col-sm-2 col-lg-2">
-                <?php if ($this->session->userdata('estou_logado')) { ?>
-                    <a class="btn btn-primary mb-2" href="<?php echo base_url() . 'login/sair'; ?>">Sair</a>
-                <?php } ?>
+                
             </div>
             <div class="col-xs-2 col-sm-2 col-lg-2"></div>
         </div>
