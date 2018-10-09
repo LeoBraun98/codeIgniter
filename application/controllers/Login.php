@@ -17,7 +17,9 @@ class Login extends CI_Controller {
         $this->db->where('senha', $senha);
         $usuario_logado = $this->db->get('usuario')->result();
         if (count($usuario_logado) == 1) {
-            $dados['logado'] = $usuario_logado[0];
+            $this->db->where('user', $usuario);
+            $usuario_logado1 = $this->db->get('user_logado')->result();
+            $dados['logado'] = $usuario_logado1[0];
             $dados['estou_logado'] = TRUE;
             $this->session->set_userdata($dados);
             redirect('home');
